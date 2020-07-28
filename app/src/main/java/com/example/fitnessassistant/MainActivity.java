@@ -30,6 +30,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             }
+            case "viewbuttonfood": {
+                Intent intent = new Intent(MainActivity.this, ViewFoodActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case "updatefoodbutton": {
+                Intent intent = new Intent(MainActivity.this, UpdateFoodActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case "weatherbutton": {
+                Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
+                startActivity(intent);
+                break;
+            }
         }
     }
 }

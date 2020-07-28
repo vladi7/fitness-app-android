@@ -13,26 +13,27 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ViewWorkoutActivity extends AppCompatActivity {
+public class ViewFoodActivity extends AppCompatActivity {
     private Cursor cr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_workout);
-
+        setContentView(R.layout.activity_view_food);
         displayWorkouts();
+
     }
 
 
     public void displayWorkouts(){
 
-        cr = DatabaseHandler.readDatabaseWorkouts();
+        cr = DatabaseHandler.readDatabaseFood();
         LinearLayout parent = (LinearLayout) findViewById(R.id.myLinearLayout);
 
 
         int count =0;
         if(!cr.moveToFirst()){
-            Toast.makeText(this, "Workouts not found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Food Schedule not found", Toast.LENGTH_SHORT).show();
             return;
         }
         do{
@@ -72,3 +73,5 @@ public class ViewWorkoutActivity extends AppCompatActivity {
 
     }
 }
+
+

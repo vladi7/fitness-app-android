@@ -9,7 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateWorkoutActivity"></activity>
+        <activity
+            android:name=".WeatherActivity"
+            android:label="@string/title_activity_weather">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <activity android:name=".CaloriesAPIActivity" />
+
+        <activity android:name=".UpdateFoodActivity" />
+        <activity android:name=".ViewFoodActivity" />
+        <activity android:name=".UpdateWorkoutActivity" />
         <activity android:name=".ViewWorkoutActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -18,9 +36,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
-
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

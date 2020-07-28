@@ -36,5 +36,22 @@
         android:onClick="buttonPressed"
         android:tag="updateButton"
         android:text="Update Workout" />
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonPressed"
+        android:tag="viewButtonFood"
+        android:text="Food Schedule" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonPressed"
+        android:tag="updateFoodButton"
+        android:text="Update Food Schedule" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonPressed"
+        android:tag="weatherButton"
+        android:text="Weather Now" />
 </android.widget.LinearLayout>
