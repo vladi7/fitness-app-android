@@ -23,7 +23,7 @@
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
         -->
-        <activity android:name=".CaloriesAPIActivity" />
+        <activity android:name=".CaloriesAPIActivity" android:noHistory="true"/>
 
         <activity android:name=".UpdateFoodActivity" />
         <activity android:name=".ViewFoodActivity" />

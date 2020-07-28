@@ -55,7 +55,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/workoutInfo"
+            android:id="@+id/teRecipe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />

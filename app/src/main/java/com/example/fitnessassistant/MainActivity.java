@@ -45,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             }
+            case "recipe": {
+                Intent intent = new Intent(MainActivity.this, CaloriesAPIActivity.class);
+                startActivity(intent);
+                break;
+            }
         }
     }
 }

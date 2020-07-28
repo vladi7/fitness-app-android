@@ -16,7 +16,7 @@ public class UpdateFoodActivity extends AppCompatActivity {
     }
     public void updateButtonPressed(View view) {
         EditText oldNameET = findViewById(R.id.name1ET);
-        EditText workoutInfo = findViewById(R.id.workoutInfo);
+        EditText workoutInfo = findViewById(R.id.teRecipe);
 
         String oldName = oldNameET.getText().toString();
         String workoutInfoNew = workoutInfo.getText().toString();
