@@ -38,7 +38,6 @@ public class ViewFoodActivity extends AppCompatActivity {
         }
         do{
             count++;
-            //display each student here
             String nameDB = cr.getString(1); //column no 2
             String numberDB = cr.getString(2); //column no 3
 
@@ -52,7 +51,6 @@ public class ViewFoodActivity extends AppCompatActivity {
             name.setTextColor(Color.BLACK);
             number.setTextColor(Color.BLACK);
 
-            //set textview weight = 1
             TableRow.LayoutParams params = new TableRow.LayoutParams(0, TableLayout.LayoutParams.WRAP_CONTENT, 1f);
             name.setLayoutParams(params);
             number.setLayoutParams(params);

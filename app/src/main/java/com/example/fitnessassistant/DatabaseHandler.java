@@ -20,6 +20,7 @@ public class DatabaseHandler {
     private static int countfood = 0;
 
     public static void loadDatabase(Context context) {
+
          if(context.getDatabasePath("database").exists()) {
              db = context.openOrCreateDatabase("database", MODE_PRIVATE, null);
          }
@@ -35,6 +36,7 @@ public class DatabaseHandler {
                  }
              }
          }
+
         count = (int) DatabaseUtils.queryNumEntries(db, "workouts");
         countfood = (int) DatabaseUtils.queryNumEntries(db, "food");
         System.out.println("Count food"+countfood);
