@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewWorkoutActivity"
+    android:id="@+id/myLinearLayout"
+    android:background="@drawable/heartblood">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="workouts"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:textSize="40dp"
+        android:textStyle="bold"/>
+
+
+    <ListView
+        android:id="@+id/workout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="40dp"
+        android:background="#ffffff"
+        android:layout_margin="10dp"/>
+
+    <!-- This GUI is created dynamically. See ViewStudentsActivity. java-->
+
+
+</android.widget.LinearLayout>
