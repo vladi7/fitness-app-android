@@ -11,11 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="#000000"
         android:text="Healthy Recipe "
         android:textColor="#ffffff"
-        android:background="#000000"
         android:textSize="40dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/callAPI"
@@ -43,18 +47,17 @@
         app:layout_constraintVertical_bias="1.0"
         />
 
-    <EditText
-        android:id="@+id/teMaxCalories"
+
+    <Spinner
+        android:id="@+id/spinner2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         app:layout_constraintBottom_toTopOf="@+id/callAPI"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7"
-        android:background="#ffffff"
-        android:hint="Enter Max Calories heres"
-        />
+        app:layout_constraintVertical_bias="0.707" />
 
     <EditText
         android:id="@+id/teRecipe"
@@ -86,12 +89,15 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:text="Enter Max Calories"
         android:textColor="#0C0C0C"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/teMaxCalories"
+        app:layout_constraintBottom_toTopOf="@+id/spinner2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teRecipe" />
+        app:layout_constraintTop_toBottomOf="@+id/teRecipe"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

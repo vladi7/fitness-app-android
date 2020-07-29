@@ -8,7 +8,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -26,7 +29,7 @@ public class CaloriesAPIActivity extends AppCompatActivity {
     private Button callAPIText;
     private Button callAPIVoice;
     private static final int REQ_CODE_SPEECH_INPUT = 100;
-
+    private String cals = "250";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +54,49 @@ public class CaloriesAPIActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startVoiceInput();
+            }
+        });
+        Spinner weekDays = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter<String> adpt = new ArrayAdapter<String>(CaloriesAPIActivity.this,
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.CALORIES));
+
+        adpt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        weekDays.setAdapter(adpt);
+
+        weekDays.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // your code here
+                switch(position){
+                    case 0:
+                        cals="250";
+                        break;
+                    case 1:
+                        cals = "500";
+                        break;
+                    case 2:
+                        cals="750";
+                        break;
+                    case 3:
+                        cals="1000";
+                        break;
+                    case 4:
+                        cals="1250";
+                        break;
+                    case 5:
+                        cals="1500";
+                        break;
+                    case 6:
+                        cals="2000";
+                        break;
+                }
+                System.out.println(cals);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
             }
         });
     }
@@ -87,12 +133,12 @@ public class CaloriesAPIActivity extends AppCompatActivity {
     Thread thread = new Thread(new Runnable(){
         @Override
         public void run() {
-            TextView maxCalories = (TextView) findViewById(R.id.teMaxCalories);
+
             TextView recipeValue = (TextView) findViewById(R.id.teRecipe);
             try {
 
                 URL url = new URL("https://api.edamam.com/search?q=" + recipeValue.getText().toString() +
-                        "&app_id=c8fcd435&app_key=0d914c61a22a113cab9faf1fb8a029a2&from=0&to=" + 1 + "&calories=" + 0 + "-" + maxCalories.getText().toString());
+                        "&app_id=c8fcd435&app_key=0d914c61a22a113cab9faf1fb8a029a2&from=0&to=" + 1 + "&calories=" + 0 + "-" + cals);
                 HttpURLConnection connection =
                         (HttpURLConnection) url.openConnection();
 
