@@ -1,3 +1,5 @@
+// INSPIRED BY: https://medium.com/@bhawanthagunawardana/android-sqlite-database-crud-s-with-example-application-4f5a841da8f6
+
 package com.example.fitnessassistant;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,9 +21,10 @@ import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-
+// view to handle food list
 public class ViewWorkoutActivity extends AppCompatActivity {
     private Cursor cr;
+    // workout list
     ListView workout;
 
     @Override
@@ -32,7 +35,7 @@ public class ViewWorkoutActivity extends AppCompatActivity {
         displayWorkouts();
     }
 
-
+    // gets the info from database and display it
     public void displayWorkouts(){
 
         cr = DatabaseHandler.readDatabaseWorkouts();
@@ -45,11 +48,14 @@ public class ViewWorkoutActivity extends AppCompatActivity {
             Toast.makeText(this, "Workouts not found", Toast.LENGTH_SHORT).show();
             return;
         }
-            final int[]    layouts = { android.R.id.text1, android.R.id.text2 };
-
+        // layouts for simple cr adapter
+        final int[]    layouts = { android.R.id.text1, android.R.id.text2 };
+        // columns for simple cr adapter
             final String[] columns = { "weekDay", "workoutCSV" };
-            adapter = new SimpleCursorAdapter(this,android.R.layout.simple_list_item_2,cr,columns, layouts);
-            workout.setAdapter(adapter);
+        // simple cursor adapter
+        adapter = new SimpleCursorAdapter(this,android.R.layout.simple_list_item_2,cr,columns, layouts);
+        // setting the adapter for food to simple cr adapter
+        workout.setAdapter(adapter);
 
 
 

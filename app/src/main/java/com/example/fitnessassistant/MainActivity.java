@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-
+// this one is purely to handle the front screen of the app.
 public class MainActivity extends AppCompatActivity {
     private SQLiteDatabase db;
 
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         DatabaseHandler.loadDatabase(this);
     }
-
+    // checks which button is pressed and changes the view accordingly
     public void buttonPressed(View view) {
         String tag = view.getTag().toString().toLowerCase();
         switch (tag) {

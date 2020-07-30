@@ -20,65 +20,70 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="428dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="300dp">
+        android:layout_marginBottom="64dp"
+        android:orientation="vertical">
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonPressed"
-        android:tag="viewButton"
-        android:text="View all Workouts"
-        android:background="@drawable/button"
-        android:textColor="#ffffff"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonPressed"
-        android:tag="updateButton"
-        android:text="Update Workout"
-        android:background="@drawable/button"
-        android:layout_marginTop="10dp"
-        android:textColor="#ffffff"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonPressed"
-        android:tag="viewButtonFood"
-        android:text="Food Schedule"
-        android:background="@drawable/button"
-        android:layout_marginTop="10dp"
-        android:textColor="#ffffff"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonPressed"
-        android:tag="updateFoodButton"
-        android:text="Update Food Schedule"
-        android:background="@drawable/button"
-        android:layout_marginTop="10dp"
-        android:textColor="#ffffff"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonPressed"
-        android:tag="weatherButton"
-        android:text="Weather Now"
-        android:background="@drawable/button"
-        android:layout_marginTop="10dp"
-        android:textColor="#ffffff"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonPressed"
-        android:tag="recipe"
-        android:text="Get the Healthiest Recipies"
-        android:background="@drawable/button"
-        android:layout_marginTop="10dp"
-        android:textColor="#ffffff"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:onClick="buttonPressed"
+            android:tag="viewButton"
+            android:text="View all Workouts"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:onClick="buttonPressed"
+            android:tag="updateButton"
+            android:text="Update Workout"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:onClick="buttonPressed"
+            android:tag="viewButtonFood"
+            android:text="Food Schedule"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:onClick="buttonPressed"
+            android:tag="updateFoodButton"
+            android:text="Update Food Schedule"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:onClick="buttonPressed"
+            android:tag="weatherButton"
+            android:text="Weather Now"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:onClick="buttonPressed"
+            android:tag="recipe"
+            android:text="Get the Healthiest Recipies"
+            android:textColor="#ffffff" />
 
     </LinearLayout>
 </RelativeLayout>

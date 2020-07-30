@@ -1,3 +1,5 @@
+// REFERENCE: https://code.tutsplus.com/tutorials/create-a-weather-app-on-android--cms-21587
+
 package com.example.fitnessassistant;
 
 import androidx.lifecycle.ViewModelProviders;

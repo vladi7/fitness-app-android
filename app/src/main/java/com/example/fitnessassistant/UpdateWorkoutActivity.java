@@ -1,3 +1,4 @@
+// INSPIRED BY: https://medium.com/@bhawanthagunawardana/android-sqlite-database-crud-s-with-example-application-4f5a841da8f6
 package com.example.fitnessassistant;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,12 +12,15 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class UpdateWorkoutActivity extends AppCompatActivity {
+    // default day of week
     private String record = "Monday";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_workout);
+        // add spinner
         Spinner weekDays = (Spinner) findViewById(R.id.spinner1);
+        // adapter
         ArrayAdapter<String> adpt = new ArrayAdapter<String>(UpdateWorkoutActivity.this,
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.weekDays));
 
@@ -58,14 +62,14 @@ public class UpdateWorkoutActivity extends AppCompatActivity {
             }
         });
     }
-
+    // handles button
     public void updateButtonPressed(View view) {
 
         EditText workoutInfo = findViewById(R.id.teRecipe);
 
 
         String workoutInfoNew = workoutInfo.getText().toString();
-
+        // updates the database
         DatabaseHandler.updateWorkoutUsingName(record, workoutInfoNew);
         Toast.makeText(this, "Workout updated", Toast.LENGTH_SHORT).show();
 

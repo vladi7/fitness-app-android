@@ -30,9 +30,10 @@
         android:layout_marginTop="50dp"/>
 
     <Spinner
+        android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"  />
+        android:background="#4CAF50" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,22 +50,24 @@
         android:orientation="horizontal"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="219dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="320px"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/teRecipe"
-            android:layout_width="match_parent"
+            android:layout_width="237dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_weight="1"
-            android:background="#ffffff"
+            android:background="#4CAF50"
             android:hint="enter food schedule informations"
             android:textColor="#121212"
             android:visibility="visible" />
 
     </LinearLayout>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

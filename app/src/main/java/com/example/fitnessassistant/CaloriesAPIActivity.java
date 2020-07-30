@@ -26,9 +26,13 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class CaloriesAPIActivity extends AppCompatActivity {
+    // button for api call
     private Button callAPIText;
+    // button for audio recognition
     private Button callAPIVoice;
+    // code for speech input
     private static final int REQ_CODE_SPEECH_INPUT = 100;
+    // default values for calories set
     private String cals = "250";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +41,14 @@ public class CaloriesAPIActivity extends AppCompatActivity {
 
 
         Intent mainIntent = getIntent();
+
+        //get the view by id
         callAPIText = (Button) findViewById(R.id.callAPI);
+        //get the view by id
         callAPIVoice = (Button) findViewById(R.id.callAPI_voice);
 
 
-
+        // starting the thread with a button to call the api
         callAPIText.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -49,6 +56,7 @@ public class CaloriesAPIActivity extends AppCompatActivity {
 
                 }
             });
+        // button to handle voice
         callAPIVoice.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -56,17 +64,19 @@ public class CaloriesAPIActivity extends AppCompatActivity {
                 startVoiceInput();
             }
         });
+        // the spinner for week days
         Spinner weekDays = (Spinner) findViewById(R.id.spinner2);
+        // array adapter
         ArrayAdapter<String> adpt = new ArrayAdapter<String>(CaloriesAPIActivity.this,
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.CALORIES));
-
+        // set the type of dropdown view
         adpt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         weekDays.setAdapter(adpt);
 
         weekDays.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                // your code here
+                // selecting the actual calories
                 switch(position){
                     case 0:
                         cals="250";
@@ -96,11 +106,10 @@ public class CaloriesAPIActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-                // your code here
             }
         });
     }
-
+    // method to get the voice input
     private void startVoiceInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -112,6 +121,7 @@ public class CaloriesAPIActivity extends AppCompatActivity {
 
         }
     }
+    // method to actually handle the result of the input
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -129,7 +139,7 @@ public class CaloriesAPIActivity extends AppCompatActivity {
 
         }
     }
-
+    // the thread to call the external api and handle the json response
     Thread thread = new Thread(new Runnable(){
         @Override
         public void run() {
